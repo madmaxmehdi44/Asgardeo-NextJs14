@@ -1,5 +1,4 @@
 'use client';
-import logout from '../lib/logout';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 export default function ({ client_id }: { client_id: string | undefined }) {
