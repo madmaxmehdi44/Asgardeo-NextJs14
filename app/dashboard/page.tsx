@@ -1,8 +1,7 @@
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/lib/auth';
 import LogoutButton from '../ui/LogoutButton';
 export default async function Page() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession();
   return (
     <div className='grid place-content-center min-h-[100vh] text-center'>
       <h1 className='text-[2.5rem]'>Asgardeo Demo</h1>

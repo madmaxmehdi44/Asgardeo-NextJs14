@@ -1,6 +1,4 @@
 import { NextAuthOptions } from 'next-auth';
-import type { OIDCConfig } from '@auth/core/providers';
-import { Profile } from 'next-auth';
 export const authOptions: NextAuthOptions = {
   providers: [
     {
