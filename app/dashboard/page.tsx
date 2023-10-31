@@ -4,11 +4,18 @@ import LogoutButton from '../ui/LogoutButton';
 export default async function Page() {
   const session = await getServerSession(authOptions);
   return (
-    <div>
-      <h1>This is a dashboard</h1>
-      {session?.user?.name}
+    <div className='grid place-content-center min-h-[100vh] text-center'>
+      <h1 className='text-[2.5rem]'>Asgardeo Demo</h1>
       <br />
-      <LogoutButton client_id={process.env.OAUTH_CLIENT_ID} />
+      <br />
+      <h1 className='text-xl my-5'>
+        You are logged in as {session?.user?.name}
+      </h1>
+      <h1 className='text-l'>This is a protected route.</h1>
+      <br />
+      <div>
+        <LogoutButton client_id={process.env.OAUTH_CLIENT_ID} />
+      </div>
     </div>
   );
 }

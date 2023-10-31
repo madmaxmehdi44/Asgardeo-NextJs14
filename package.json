@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/core": "^0.18.0",
+    "mochi-ui": "^1.2.5",
     "next": "14.0.0",
     "next-auth": "^4.24.4",
     "react": "^18",
