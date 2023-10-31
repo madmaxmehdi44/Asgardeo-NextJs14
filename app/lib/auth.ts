@@ -6,12 +6,12 @@ export const authOptions: NextAuthOptions = {
     {
       id: 'asgardeo',
       name: 'Asgardeo',
-      clientId: '022cftl9HfvSWVLcdTlT51bRnmsa',
-      clientSecret: 'UJdHXAY07Y0M5a4WKVP0WnwvROtZTAMNQt8Ry_OWzn0a',
-      issuer: 'https://api.asgardeo.io/t/hasathcharu/oauth2/token',
-      userinfo: `https://api.asgardeo.io/t/${process.env.ASGARDEO_ORGANIZATION_NAME}/oauth2/userinfo`,
+      clientId: process.env.OAUTH_CLIENT_ID,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      issuer: process.env.OAUTH_ISSUER_URL,
+      userinfo: process.env.OAUTH_USERINFO_URL,
       type: 'oauth',
-      wellKnown: `https://api.asgardeo.io/t/${process.env.ASGARDEO_ORGANIZATION_NAME}/oauth2/token/.well-known/openid-configuration`,
+      wellKnown: process.env.OAUTH_WELL_KNOWN_URL,
       authorization: {
         params: { scope: 'openid profile' },
       },

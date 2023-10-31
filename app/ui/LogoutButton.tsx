@@ -9,10 +9,11 @@ export default function ({ client_id }: { client_id: string | undefined }) {
       size='large'
       title='Log Out'
       color='danger'
-      onClick={() => {
-        const endSessionURL = `https://api.asgardeo.io/t/hasathcharu/oidc/logout?client_id=${client_id}&post_logout_redirect_uri=http://localhost:3000`;
-        signOut({ redirect: false });
-        router.push(endSessionURL);
+      onClick={async () => {
+        await signOut({ redirect: false });
+        router.push(
+          `https://api.asgardeo.io/t/hasathcharu/oidc/logout?client_id=${client_id}&post_logout_redirect_uri=http://localhost:3000`
+        );
       }}
     />
   );
